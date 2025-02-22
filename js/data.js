@@ -332,7 +332,7 @@ function eventsDate() {
         eventCol.classList.add('col-lg-4' , 'col-sm-6' , 'col-6', 'mb-4');
 
         const eventContent = `
-            <div class="d-flex align-items-center pe-5">
+            <div class="d-flex align-items-center me-4">
                 <img class=" imgNumberEven" src="${event.icon}" alt="number"/>
                 <div class="marginRightH6">
                     <h6 class=" mb-2">${event.title}</h6>

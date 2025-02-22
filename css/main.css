@@ -425,8 +425,8 @@ textarea:focus {
     }
     h3{
         color: #e84545f6;
-        font-weight: lighter;
-        font-size: 1.3rem;
+        font-weight: bolder;
+        font-size: 1.2rem;
     }
     h6{
         font-size: 0.9rem !important;
