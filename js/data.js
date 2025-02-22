@@ -350,7 +350,7 @@ function eventsDate() {
 
     const bookingContent = `
         <div class="col-md-7">
-            <div class="d-flex align-items-center mx-4">
+            <div class="d-flex align-items-center mx-3">
                 <img class=" imgIcon" src="Assets/icon/Asset 8@4x.png" alt="number"/>
                 <div class="pe-3">
                     <h5 class=" text mb-0"> 
