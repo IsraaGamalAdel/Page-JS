@@ -192,61 +192,26 @@ function validationTime() {
 }
 
 // Even Icon
-document.addEventListener("DOMContentLoaded", function () {
-    gsap.registerPlugin(ScrollTrigger);
-
-    document.addEventListener("mousemove", (event) => {
-        let xEventMouse = (event.clientX / window.innerWidth - 0.5) * 50; 
-        let yEventMouse = (event.clientY / window.innerHeight - 0.5) * 50; 
-
-        gsap.to(".icons", {
-            x: xEventMouse,
-            y: yEventMouse,
-            duration: 0.5,
-            ease: "power2.out"
-        });
-    });
-
-    const icons = document.querySelectorAll('.icons i');
-
-    icons.forEach((icon) => {
-        gsap.fromTo(icon,
-            { y: -30, opacity: 0 },
-            {
-                y: 0, opacity: 1,
-                duration: 0.5,
-                scrollTrigger: {
-                    trigger: icon,
-                    start: "top 90%",
-                    end: "top 50%",
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
-    });
-});
-
-
-// Even Icon again
-// document.addEventListener("DOMContentLoaded" , function() {
+// document.addEventListener("DOMContentLoaded", function () {
 //     gsap.registerPlugin(ScrollTrigger);
 
-//     document.addEventListener("mousemove" , (event) => {
-//         let xEventMouse = (event.clientX / window.innerWidth -0.6) * 50;
-//         let yEventMouse = (event.clientY / window.innerHeight -0.6) * 50;
+//     document.addEventListener("mousemove", (event) => {
+//         let xEventMouse = (event.clientX / window.innerWidth - 0.5) * 100; 
+//         let yEventMouse = (event.clientY / window.innerHeight - 0.5) * 100; 
 
-//         gsap.to(".icons" , {
+//         xEventMouse = Math.min(Math.max(xEventMouse, -50), 50);
+//         yEventMouse = Math.min(Math.max(yEventMouse, -50), 50);
+
+//         gsap.to(".icons", {
 //             x: xEventMouse,
 //             y: yEventMouse,
-//             duration: 0.6,
+//             duration: 0.5,
 //             ease: "power2.out"
-//         })
-//     })
+//         });
+//     });
 
-//     const icons = document.querySelectorAll('.icons i');
-
-//     icons.forEach( (icon) => {
-//         gsap.fromTo( icon, 
+//     icons.forEach((icon) => {
+//         gsap.fromTo(icon,
 //             { y: -30, opacity: 0 },
 //             {
 //                 y: 0, opacity: 1,
@@ -258,37 +223,71 @@ document.addEventListener("DOMContentLoaded", function () {
 //                     toggleActions: "play none none reverse"
 //                 }
 //             }
-//         )
-//     })
-// })
-
-// Even Icon again not gsap
-// document.addEventListener("DOMContentLoaded", function () {
-//     // تحريك الأيقونات مع الماوس
-//     const iconsContainer = document.querySelector('.icons');
-//     document.addEventListener("mousemove", (event) => {
-//         let xEventMouse = (event.clientX / window.innerWidth - 0.5) * 50;
-//         let yEventMouse = (event.clientY / window.innerHeight - 0.5) * 50;
-//         iconsContainer.style.transform = `translate(${xEventMouse}px, ${yEventMouse}px)`;
-//     });
-
-//     const icons = document.querySelectorAll('.icons i');
-//     const observer = new IntersectionObserver((entries) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 entry.target.style.opacity = 1;
-//                 entry.target.style.transform = 'translateY(0)';
-//             } else {
-//                 entry.target.style.opacity = 0;
-//                 entry.target.style.transform = 'translateY(-30px)';
-//             }
-//         });
-//     }, { threshold: 0.5 });
-
-//     icons.forEach(icon => {
-//         observer.observe(icon);
+//         );
 //     });
 // });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
 
+    document.addEventListener("mousemove", (event) => {
+        let xEventMouse = (event.clientX / window.innerWidth - 0.5) * 100; 
+        let yEventMouse = (event.clientY / window.innerHeight - 0.5) * 100; 
+
+        xEventMouse = Math.min(Math.max(xEventMouse, -50), 50);
+        yEventMouse = Math.min(Math.max(yEventMouse, -50), 50);
+
+        gsap.to(".icons img", {
+            x: xEventMouse,
+            y: yEventMouse,
+            duration: 0.5,
+            ease: "power2.out"
+        });
+    });
+
+    const image = document.querySelector(".icons img");
+    if (image) {
+        gsap.fromTo(image,
+            { y: 10, opacity: 0 },
+            {
+                y: 0, opacity: 1,
+                duration: 0.5,
+                scrollTrigger: {
+                    trigger: image,
+                    start: "top 90%",
+                    end: "top 50%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+});
+
+
+
+
+// document.addEventListener("mousemove", (event) => {
+//     let xEventMouse = (event.clientX / window.innerWidth - 0.5) * 100;
+//     let yEventMouse = (event.clientY / window.innerHeight - 0.5) * 100;
+
+//     // تحديد الحدود
+//     xEventMouse = Math.min(Math.max(xEventMouse, -50), 50);
+//     yEventMouse = Math.min(Math.max(yEventMouse, -50), 50);
+
+//     gsap.to(".icons", {
+//         x: xEventMouse,
+//         y: yEventMouse,
+//         duration: 0.5,
+//         ease: "power2.out"
+//     });
+// });
+
+// window.addEventListener("resize", () => {
+//     gsap.to(".icons", {
+//         x: 0,
+//         y: 0,
+//         duration: 0.5,
+//         ease: "power2.out"
+//     });
+// });
