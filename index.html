@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABAIآباد</title>
+    <link rel="icon" href="./Assets/logo/Asset 9@4x.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"  href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet"  href="./css/main.css">
+</head>
+
+<body  class="bg-dark text-white "  dir="rtl" lang="ar">
+
+    <section class="" id="home">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center homeMargin">
+                        <h1 class=" text-center"> معسكر البرمجة الشامل </h1>
+                        <h2 class="text-white text-center"> لتطوير الويب وتطبيقات الموبايل</h2>
+                        <div class="d-flex justify-content-center">
+                            <button onclick="sendDate()" class="btn btn-danger fs-3 fw-medium mt-5 text-dark px-4 py-1" 
+                                type="button"
+                            >
+                                سجل الأن
+                            </button>
+                        </div>
+
+                        <!-- icons home -->
+                        <div class="icons">
+                            <img src="./Assets/body/iconBody.png" alt="logo" class="img-fluid widthIconHome"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2Section -->
+    <section class="section mt-3 container" id="coursesContainer">
+        <div class="row">
+            <!-- Date -->
+        </div>
+    </section>
+
+    <!-- 3Section Grid -->
+    <section class="mt-5" id="section">
+        <div class='container'>
+            <div class="row">
+                <div class="col-md-12 mb-5">
+                    <h1 class="text-center "> المخرجات والفوائد للطالب المشترك</h1>
+                </div>
+            </div>
+            <div class="row mt-4" id="contentContainer">
+                <!-- Date -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 4Section -->
+    <section class="mt-4" id="">
+        <div class=' container'>
+            <div class="row">
+                <div class="col-md-12 pb-4">
+                    <h3 class="text-center font4Section "> الفائدة العامة</h3>
+                </div>
+                <div class="col-md-12 pb-5">
+                    <h4 class="text-center fw-light fs-2"> 
+                        تأهيل المتدرب ليصبح مطوراً شاملاً (Full Stack Developer) قادراً على تلبية احتياجات سوق العمل في مجالي تطوير الويب وتطبيقات الموبايل. 
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5Section -->
+    
+    <section class="mt-2" id="eventsSection">
+        <div class='container'>
+            <div class="row ">
+                <div class="col-sm-12">
+                    <div class="pb-5 d-flex justify-content-center">
+                        <h5 class="text-center text-white py-2 boxH1">تفاصيل المعسكر</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="eventsContainer">
+                <!-- Date -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 6Section Input Date -->
+    <section class="mt-5" id="dateSection">
+        <div class=' container'>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class=" pb-0 d-flex justify-content-center ">
+                        <h5 class=" text-center text-white py-2 px-0 boxH1"> تحميل محاور المعسكر</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" w-100 m-auto p-5">
+                <div class="row gx-5">
+                    <div class="col-md-6 pb-3">
+                        <label for="signupName" class="text-white ">الاسم الرباعي كامل</label>
+                        <input oninput="validationName()" id="signupName" class="form-control my-3 text-end px-5" type="text">
+                        <small id="incorrectName" class="text-danger py-3 fs-4 fw-light"></small>
+                    </div>
+            
+                    <div class="col-md-6 pb-3">
+                        <label for="signupEmail" class="text-white">البريد الالكتروني</label>
+                        <input oninput="validationEmail()" id="signupEmail" class="form-control my-3 text-end px-5" type="email">
+                        <small id="incorrectEmail" class="text-danger py-3 fw-lighter"></small>
+                    </div>
+
+                    <div class="col-md-6 pb-3 position-relative">
+                        <label for="signupQualification" class="text-white">المؤهل العلمي</label>
+                        <div class="position-relative">
+                            <select onchange="validationQualification()" id="signupQualification" class="form-control my-3 text-end pe-4 px-5 pe-5 ">
+                                <option value="" class="d-none">اختر مؤهلك العلمي</option>
+                                <option value="دبلوم">ثانوي</option>
+                                <option value="دبلوم">دبلوم</option>
+                                <option value="بكالوريوس">بكالوريوس</option>
+                                <option value="ماجستير">ماجستير</option>
+                                <option value="دكتوراه">دكتوراه</option>
+                            </select>
+                            <i class="fa-solid fa-angle-down position-absolute iconSelect"></i>
+                        </div>
+                        <small id="incorrectQualification" class="text-danger py-3 fs-4 fw-light"></small>
+                    </div>
+                    
+                    <div class="col-md-6 pb-3">
+                        <label for="signupPhone" class="text-white">رقم الجوال</label>
+                        <input oninput="validationPhone()" id="signupPhone" class="form-control my-3 text-end px-5" type="tel">
+                        <small id="incorrectPhone" class="text-danger  py-3 fs-4 fw-light"></small>
+                    </div>
+            
+                    <div class="col-md-6 pb-3 position-relative">
+                        <label for="signupAttendanceType" class="text-white"> حضور الدورة</label>
+                        <div class="position-relative">
+                            <select oninput="validationAttendance()" id="signupAttendanceType" class="form-control my-3 text-end px-5">
+                                <option value="" class="d-none"> اونلاين (عن بعد) </option>
+                                <option value="حضوري">حضوري</option>
+                                <option value="عن بعد">أونلاين</option>
+                            </select>
+                            <i class="fa-solid fa-angle-down position-absolute iconSelect"></i>
+                        </div>
+                        <small id="incorrectAttendance" class="text-danger py-3 fs-4 fw-light"></small>
+                    </div>
+            
+                    <div class="col-md-6 pb-3 position-relative">
+                        <label for="signupTimeType" class="text-white"> وقت الدورة  </label>
+                        <div class="position-relative">
+                            <select oninput="validationTime()" id="signupTimeType" class="form-control my-3 text-end px-5">
+                                <option value="" class="d-none text-light">  </option>
+                                <option value="الجمعة والسبت من الساعة 2:00 ظهرًا إلى 6:00 مساء">الجمعة والسبت من الساعة 2:00 ظهرًا إلى 6:00 مساء</option>
+                                <option value="الجمعة والسبت من الساعة 6:00 مساءً إلى 10:00 مساءً">الجمعة والسبت من الساعة 6:00 مساءً إلى 10:00 مساءً</option>
+                                <option value="من الأحد إلى الأربعاء من الساعة 4:00 عصرًا إلى 7:00 مساءً" > من الأحد إلى الأربعاء من الساعة 4:00 عصرًا إلى 7:00 مساءً</option>
+                                <option value="من الأحد إلى الأربعاء من الساعة 7:00 مساءً إلى 10:00 مساءً ">من الأحد إلى الأربعاء من الساعة 7:00 مساءً إلى 10:00 مساءً</option>
+                            </select>
+                            <i class="fa-solid fa-angle-down position-absolute iconSelect"></i>
+                        </div>
+                        <small id="incorrectTime" class="text-danger py-3 fs-4 fw-light"></small>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <div class="text-center d-flex justify-content-center fs-3 fw-light pt-3">
+                            <p id="signupMessage" class="text-white"></p>
+                        </div>
+                        <div class="text-center d-flex justify-content-center">
+                            <button onclick="signUp()" class="btn btnDanger  text-dark mt-1">
+                                تسجيل
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layer -->
+    <section>
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-body-tertiary">
+                    <div class="modal-header">
+                        <img class="img-fluid" src="./Assets/layers/Asset 1@4x.png" data-bs-dismiss="modal" aria-label="إغلاق"/>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center text-center">
+                        <div class="">
+                            <img src="./Assets/layers/Asset 2@4x.png" alt="icon" />
+                            
+                            <h4 class="py-3 fw-bolder fs-3 text">يرجي الانتظار جاري تحويلك الي صفحة الدفع</h4>
+                            <i class="fas fa-spinner fa-spin fa-3x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-bottom">
+            <div class=" container-fluid ">
+                <div class=" row">
+                    <div class="col-md-12  my-4 ">
+                        <hr class="w-75 text-white mx-auto mb-3"/>
+                        <div class="d-flex justify-content-center align-items-center ">
+                            <span class=" text-center text fw-lighter">  حقوق النشر © 2024 , آباد للتدريب </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
