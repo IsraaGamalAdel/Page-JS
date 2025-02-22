@@ -332,7 +332,7 @@ function eventsDate() {
         eventCol.classList.add('col-lg-4' , 'col-sm-6' , 'col-6', 'mb-4');
 
         const eventContent = `
-            <div class="d-flex align-items-center me-4">
+            <div class="d-flex align-items-center mx-4">
                 <img class=" imgNumberEven" src="${event.icon}" alt="number"/>
                 <div class="marginRightH6">
                     <h6 class=" mb-2">${event.title}</h6>
@@ -350,7 +350,7 @@ function eventsDate() {
 
     const bookingContent = `
         <div class="col-md-7">
-            <div class="d-flex align-items-center pe-5">
+            <div class="d-flex align-items-center mx-4">
                 <img class=" imgIcon" src="Assets/icon/Asset 8@4x.png" alt="number"/>
                 <div class="pe-3">
                     <h5 class=" text mb-0"> 
