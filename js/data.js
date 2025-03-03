@@ -426,10 +426,16 @@ function eventsDate() {
 };
 
 
-window.onload = function() {
+// window.onload = function() {
+//     createContent();
+//     displayCourses();
+//     eventsDate();
+// };
+
+
+
+window.addEventListener('load', function() {
     createContent();
     displayCourses();
     eventsDate();
-};
-
-
+});
