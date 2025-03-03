@@ -432,8 +432,14 @@ function eventsDate() {
 };
 
 
-window.onload = function() {
-    createContent();
+// window.onload = function() {
+//     createContent();
+//     displayCourses();
+//     eventsDate();
+// };
+
+document.addEventListener('DOMContentLoaded', function() {
     displayCourses();
+    createContent();
     eventsDate();
-};
+});
