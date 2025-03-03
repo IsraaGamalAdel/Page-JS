@@ -1,5 +1,5 @@
 // Date Courses
-const courseData = [
+export const courseData = [
     {
         title: "SQL",
         concepts: "المفاهيم المغطاة",
@@ -145,7 +145,7 @@ const courseData = [
     
 ]
 
-const dataStudents = [
+export const dataStudents = [
     {
         icon: "Assets/icon/Asset 13@4x.png",
         title: "مشاريع عملية نهائية",
@@ -184,7 +184,7 @@ const dataStudents = [
     }
 ];
 
-const dataEvents = [
+export const dataEvents = [
     {
         icon: 'Assets/icon/Asset 6@4x.png',
         title: 'بداية من',
@@ -217,7 +217,7 @@ const dataEvents = [
     }
 ];
 
-const discountData = [
+export const discountData = [
     {
         title: "خصم %40" ,
         description: "على سعر المعسكر",
@@ -226,204 +226,204 @@ const discountData = [
 ];
 
 
-let coursesContainer = document.getElementById('coursesContainer');
-let container = document.getElementById("contentContainer");
-let eventsContainer = document.getElementById('eventsContainer');
+// let coursesContainer = document.getElementById('coursesContainer');
+// let container = document.getElementById("contentContainer");
+// let eventsContainer = document.getElementById('eventsContainer');
 
 
-// courses
-function displayCourses() {
-    const rowContainer = coursesContainer.querySelector('.row'); 
-    rowContainer.innerHTML = '';
+// // courses
+// function displayCourses() {
+//     const rowContainer = coursesContainer.querySelector('.row'); 
+//     rowContainer.innerHTML = '';
 
-    courseData.forEach((course, index) => {
-        const courseSection = document.createElement('section');
-        courseSection.classList.add('col-md-12', 'my-5' ); 
+//     courseData.forEach((course, index) => {
+//         const courseSection = document.createElement('section');
+//         courseSection.classList.add('col-md-12', 'my-5' ); 
 
-        if (index % 2 === 0) {
-            courseSection.classList.add('odd');
-            courseSection.style.backgroundImage = 'var(--gradient_odd)';
-        } else {
-            courseSection.classList.add('even');
-            courseSection.style.backgroundImage = 'var(--gradient_even)';
-        }
+//         if (index % 2 === 0) {
+//             courseSection.classList.add('odd');
+//             courseSection.style.backgroundImage = 'var(--gradient_odd)';
+//         } else {
+//             courseSection.classList.add('even');
+//             courseSection.style.backgroundImage = 'var(--gradient_even)';
+//         }
 
-        courseSection.innerHTML = `
-            <div class="row px-4 py-0 ">
-                <div class="col-md-2 col-sm-12 col-12 d-flex align-items-center justify-content-center">
-                    <div class="text pe-0 pt-4">
-                        <h3 class=" text-center">${course.title}</h3>
-                    </div>
-                </div>
+//         courseSection.innerHTML = `
+//             <div class="row px-4 py-0 ">
+//                 <div class="col-md-2 col-sm-12 col-12 d-flex align-items-center justify-content-center">
+//                     <div class="text pe-0 pt-4">
+//                         <h3 class=" text-center">${course.title}</h3>
+//                     </div>
+//                 </div>
 
-                <div class="col-md-9 col-sm-12 col-12 pt-3  my-0 text-end  paddingList">
-                    <h4 class="text-white fs-2 fw-bolder">${course.concepts}</h4>
-                    <p class="text-white">${course.description}</p>
+//                 <div class="col-md-9 col-sm-12 col-12 pt-3  my-0 text-end  paddingList">
+//                     <h4 class="text-white fs-2 fw-bolder">${course.concepts}</h4>
+//                     <p class="text-white">${course.description}</p>
                     
-                    <ul>
-                        ${course.details.map((detail) => {
-                            if (detail.trim() === "المفاهيم المتقدمة:") {
-                                return `</ul><h3 class=" fw-bolder text-white mt-3">${detail}</h3><ul>`; 
-                            }
-                            return `<li class="mb-2">${detail}</li>`;
-                        }).join('')}
-                    </ul>
-                </div>
+//                     <ul>
+//                         ${course.details.map((detail) => {
+//                             if (detail.trim() === "المفاهيم المتقدمة:") {
+//                                 return `</ul><h3 class=" fw-bolder text-white mt-3">${detail}</h3><ul>`; 
+//                             }
+//                             return `<li class="mb-2">${detail}</li>`;
+//                         }).join('')}
+//                     </ul>
+//                 </div>
 
-                <div class="col-md-1 col-sm-12 col-12">
-                    <div class=" heightImg">
-                        <div class="ps-0 text-start"> 
-                            ${course.image.trim() === "Assets/number/Asset9@4x.png" ?
-                                `<img class="img-fluid imgNumber ps-0 pt-0 " src="${course.image}" alt="number"/>` :
-                                `<img class="img-fluid imgNumber ms-0" src="${course.image}" alt="number"/>`
-                            }
-                        </div>
+//                 <div class="col-md-1 col-sm-12 col-12">
+//                     <div class=" heightImg">
+//                         <div class="ps-0 text-start"> 
+//                             ${course.image.trim() === "Assets/number/Asset9@4x.png" ?
+//                                 `<img class="img-fluid imgNumber ps-0 pt-0 " src="${course.image}" alt="number"/>` :
+//                                 `<img class="img-fluid imgNumber ms-0" src="${course.image}" alt="number"/>`
+//                             }
+//                         </div>
 
-                        <div class="d-flex justify-content-end gap-3">
-                            <img class="img-fluid imgNumberIcon mb-0 mt-0" src="${course.iconTime}" alt="number"/>
-                            <p class="marginP fw-bold mt-0 align-content-center">${course.duration}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
+//                         <div class="d-flex justify-content-end gap-3">
+//                             <img class="img-fluid imgNumberIcon mb-0 mt-0" src="${course.iconTime}" alt="number"/>
+//                             <p class="marginP fw-bold mt-0 align-content-center">${course.duration}</p>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         `;
 
         
-        rowContainer.appendChild(courseSection);
-    });
-};
+//         rowContainer.appendChild(courseSection);
+//     });
+// };
 
-function createContent (){
-    dataStudents.forEach((student) => {
-        const section = document.createElement("div");
-        section.classList.add("col-md-6" , "d-flex" , "justify-content-center" );
-        section.innerHTML = `
-            <div class="box py-3 ">
-                <div class="row align-items-center">
-                    <div class="col-md-3 col-sm-3 col-3 d-flex justify-content-center">
-                        <img class="img-fluid imgBox" src="${student.icon}" alt="number"/>
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-9">
-                        <span class="">${student.title}</span>
-                    </div>
-                </div>
-                <div class="pt-3 bodyText">
-                    <ul>
-                        ${student.items.map((item) => `<li class="fs-5 fw-light">${item}</li>`).join("")}
-                    </ul>
-                </div>
-            </div>
-        `;
-        container.appendChild(section);
-    }); 
-};
+// function createContent (){
+//     dataStudents.forEach((student) => {
+//         const section = document.createElement("div");
+//         section.classList.add("col-md-6" , "d-flex" , "justify-content-center" );
+//         section.innerHTML = `
+//             <div class="box py-3 ">
+//                 <div class="row align-items-center">
+//                     <div class="col-md-3 col-sm-3 col-3 d-flex justify-content-center">
+//                         <img class="img-fluid imgBox" src="${student.icon}" alt="number"/>
+//                     </div>
+//                     <div class="col-md-9 col-sm-9 col-9">
+//                         <span class="">${student.title}</span>
+//                     </div>
+//                 </div>
+//                 <div class="pt-3 bodyText">
+//                     <ul>
+//                         ${student.items.map((item) => `<li class="fs-5 fw-light">${item}</li>`).join("")}
+//                     </ul>
+//                 </div>
+//             </div>
+//         `;
+//         container.appendChild(section);
+//     }); 
+// };
 
-//dataEvents
-function eventsDate() {
-    // Date Events
-    const eventsRow = document.createElement('div');
-    eventsRow.classList.add( 'col-md-8', 'col-sm-12');
-    const eventsAddRow = document.createElement('div');
-    eventsAddRow.classList.add('row');
+// //dataEvents
+// function eventsDate() {
+//     // Date Events
+//     const eventsRow = document.createElement('div');
+//     eventsRow.classList.add( 'col-md-8', 'col-sm-12');
+//     const eventsAddRow = document.createElement('div');
+//     eventsAddRow.classList.add('row');
 
-    //one row (col-md-8)
-    dataEvents.forEach((event) => {
-        const eventCol = document.createElement('div');
-        eventCol.classList.add('col-lg-4' , 'col-sm-6' , 'col-6', 'mb-4');
+//     //one row (col-md-8)
+//     dataEvents.forEach((event) => {
+//         const eventCol = document.createElement('div');
+//         eventCol.classList.add('col-lg-4' , 'col-sm-6' , 'col-6', 'mb-4');
 
-        const eventContent = `
-            <div class="d-flex align-items-center mx-4">
-                <img class=" imgNumberEven" src="${event.icon}" alt="number"/>
-                <div class="marginRightH6">
-                    <h6 class=" mb-2">${event.title}</h6>
-                    <h6 class= "">${event.date}</h6>
-                </div>
-            </div>
-        `;
-        eventCol.innerHTML = eventContent;
-        eventsAddRow.appendChild(eventCol);
-    }); 
+//         const eventContent = `
+//             <div class="d-flex align-items-center mx-4">
+//                 <img class=" imgNumberEven" src="${event.icon}" alt="number"/>
+//                 <div class="marginRightH6">
+//                     <h6 class=" mb-2">${event.title}</h6>
+//                     <h6 class= "">${event.date}</h6>
+//                 </div>
+//             </div>
+//         `;
+//         eventCol.innerHTML = eventContent;
+//         eventsAddRow.appendChild(eventCol);
+//     }); 
     
-    // Booking Section
-    const bookingCol = document.createElement('div');
-    bookingCol.classList.add('row', 'col-lg-12', 'mb-4' ,'mt-3');
+//     // Booking Section
+//     const bookingCol = document.createElement('div');
+//     bookingCol.classList.add('row', 'col-lg-12', 'mb-4' ,'mt-3');
 
-    const bookingContent = `
-        <div class="col-md-7">
-            <div class="d-flex align-items-center mx-3">
-                <img class=" imgIcon" src="Assets/icon/Asset 8@4x.png" alt="number"/>
-                <div class="pe-3">
-                    <h5 class=" text mb-0"> 
-                        (يتم استكمال باقى مبلغ المعسكر بعد حضور اول محاضرة)
-                    </h5>
-                </div>
-            </div>
-        </div>
+//     const bookingContent = `
+//         <div class="col-md-7">
+//             <div class="d-flex align-items-center mx-3">
+//                 <img class=" imgIcon" src="Assets/icon/Asset 8@4x.png" alt="number"/>
+//                 <div class="pe-3">
+//                     <h5 class=" text mb-0"> 
+//                         (يتم استكمال باقى مبلغ المعسكر بعد حضور اول محاضرة)
+//                     </h5>
+//                 </div>
+//             </div>
+//         </div>
 
-        <div class="col-md-5 text-center pe-0">
-            <p class="text-white fw-light fs-4">المعسكر لا يتضمن اختبارات دولية</p>
-        </div>
+//         <div class="col-md-5 text-center pe-0">
+//             <p class="text-white fw-light fs-4">المعسكر لا يتضمن اختبارات دولية</p>
+//         </div>
         
-    `;
-    bookingCol.innerHTML = bookingContent;
-    eventsAddRow.appendChild(bookingCol);
+//     `;
+//     bookingCol.innerHTML = bookingContent;
+//     eventsAddRow.appendChild(bookingCol);
 
-    eventsRow.appendChild(eventsAddRow);
+//     eventsRow.appendChild(eventsAddRow);
 
-    // Many Section 
-    // tow row (col-md-4)
+//     // Many Section 
+//     // tow row (col-md-4)
 
-    const discountCol = document.createElement('div');
-    discountCol.classList.add( 'col-md-4', 'col-sm-12', 'd-flex', 'justify-content-center' , 'align-items-top');
+//     const discountCol = document.createElement('div');
+//     discountCol.classList.add( 'col-md-4', 'col-sm-12', 'd-flex', 'justify-content-center' , 'align-items-top');
 
-    discountData.forEach((discount) => {
-        const discountContent = document.createElement('div');
-        discountContent.classList.add('d-flex', 'flex-column', 'align-items-center' );
+//     discountData.forEach((discount) => {
+//         const discountContent = document.createElement('div');
+//         discountContent.classList.add('d-flex', 'flex-column', 'align-items-center' );
 
-        // numbers Div
-        const numberDiv = document.createElement('div');
-        numberDiv.classList.add('bgIcon', 'px-4', 'py-2', 'd-flex', 'flex-column', 'align-items-center');
-        const sortedNumbers = [...discount.numbers].sort((number1, number2) => number2 - number1);
+//         // numbers Div
+//         const numberDiv = document.createElement('div');
+//         numberDiv.classList.add('bgIcon', 'px-4', 'py-2', 'd-flex', 'flex-column', 'align-items-center');
+//         const sortedNumbers = [...discount.numbers].sort((number1, number2) => number2 - number1);
 
-        // numbers container
-        sortedNumbers.forEach((num, index) => {
-            const numSpan = document.createElement('div');
-            numSpan.classList.add('d-flex', 'align-items-center', 'position-relative' , 'justify-content-center');
+//         // numbers container
+//         sortedNumbers.forEach((num, index) => {
+//             const numSpan = document.createElement('div');
+//             numSpan.classList.add('d-flex', 'align-items-center', 'position-relative' , 'justify-content-center');
         
-            // Add number
-            numSpan.innerHTML = `
-                <h4 class=" fw-bolder fs-3">${num}</h4>
-                ${index === 0 ? '<i class="fa-solid fa-xmark d-flex position-absolute top-2 end-0 pe-3 fs-1 text-dark"></i>' : ''}
-            `;
+//             // Add number
+//             numSpan.innerHTML = `
+//                 <h4 class=" fw-bolder fs-3">${num}</h4>
+//                 ${index === 0 ? '<i class="fa-solid fa-xmark d-flex position-absolute top-2 end-0 pe-3 fs-1 text-dark"></i>' : ''}
+//             `;
         
-            // Append the number span to the container
-            numberDiv.appendChild(numSpan);
+//             // Append the number span to the container
+//             numberDiv.appendChild(numSpan);
         
-            // Add <hr> after each number except the last one
-            if (index < sortedNumbers.length - 1) {
-                const hr = document.createElement('hr');
-                hr.classList.add('border'); // Adjust margin as needed
-                numberDiv.appendChild(hr);
-            }
-        });
+//             // Add <hr> after each number except the last one
+//             if (index < sortedNumbers.length - 1) {
+//                 const hr = document.createElement('hr');
+//                 hr.classList.add('border'); // Adjust margin as needed
+//                 numberDiv.appendChild(hr);
+//             }
+//         });
 
-        // discount container
-        discountContent.innerHTML = `
-            <h4 class="fs-1 fw-bolder text">${discount.title}</h4>
-            <p class= "fs-2 fw-light" >${discount.description}</p>
-        `;
-        discountContent.appendChild(numberDiv);
-        discountCol.appendChild(discountContent);
-    });
+//         // discount container
+//         discountContent.innerHTML = `
+//             <h4 class="fs-1 fw-bolder text">${discount.title}</h4>
+//             <p class= "fs-2 fw-light" >${discount.description}</p>
+//         `;
+//         discountContent.appendChild(numberDiv);
+//         discountCol.appendChild(discountContent);
+//     });
 
-    // Main Container
-    const mainRow = document.createElement('div');
-    mainRow.classList.add('row', 'justify-content-center');
-    mainRow.appendChild(eventsRow);
-    mainRow.appendChild(discountCol);
+//     // Main Container
+//     const mainRow = document.createElement('div');
+//     mainRow.classList.add('row', 'justify-content-center');
+//     mainRow.appendChild(eventsRow);
+//     mainRow.appendChild(discountCol);
 
-    eventsContainer.appendChild(mainRow);
-};
+//     eventsContainer.appendChild(mainRow);
+// };
 
 
 // window.onload = function() {
@@ -433,9 +433,3 @@ function eventsDate() {
 // };
 
 
-
-window.addEventListener('load', function() {
-    createContent();
-    displayCourses();
-    eventsDate();
-});
